@@ -94,7 +94,7 @@ export function Sidebar() {
       title: "Courses",
       items: [
         {
-          title: "Mendeley Ref.Man.",
+          title: "Mendeley Ref. Man.",
           items: [
             {
               title: "My learning",
