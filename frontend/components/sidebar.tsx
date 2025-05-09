@@ -75,10 +75,11 @@ export function Sidebar() {
             item.isActive ? "bg-accent/50 font-medium" : "",
           )}
         >
+          
+          <span className="text-sm">{item.title}</span>
           <span className="mr-1">
             {expanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
           </span>
-          <span className="text-sm">{item.title}</span>
         </CollapsibleTrigger>
         <CollapsibleContent className="pt-1">
           {item.items!.map((subItem) => renderMenuItem(subItem, level + 1, itemPath))}
