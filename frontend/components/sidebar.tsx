@@ -232,7 +232,7 @@ export function Sidebar() {
       title: "Other web pages",
       items: [
         {
-          title: "About Softwares",
+          title: "About Reference Managers",
           items: [{ title: "Comparisons" }, { title: "Developments" }, { title: "Literature" }],
         },
         { title: "About Us" },
