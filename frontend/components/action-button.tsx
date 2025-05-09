@@ -1,7 +1,7 @@
 import { Search, Copy, Save, Plus, Trash, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function MainContent() {
+export function ActionButtons() {
   return (
     <div className="flex-1 px-0 md:px-4 pb-16">
       <div className="flex flex-wrap items-center gap-2">
@@ -32,6 +32,9 @@ export function MainContent() {
           <Minus className="h-4 w-4 mr-1" />
           <span>Delete</span>
         </Button>
+      </div>
+      <div>
+        <h1 className="text-md font-bold text-center">CMS/Moodle Editor Menus</h1>
       </div>
     </div>
   );

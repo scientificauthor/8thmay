@@ -25,9 +25,8 @@ import {
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <header className="border-b border-border sticky top-0 z-40 bg-background">
+    <header className="border-b border-border border-b-gray-400 sticky top-0 z-40 bg-background">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center space-x-4 md:space-x-8">
           
@@ -36,12 +35,10 @@ export function Header() {
               (<span className="text-green-600 font-bold">cite</span>
               hub).<sup className=" text-xs ml-0.5">1</sup>
             </span>
-            <span className="text-[10px] text-muted-foreground ml-1 hidden sm:block">
+            <span className="text-[10px] font-bold ml-1 hidden sm:block">
               Reference Manager & Citation Styles
             </span>
           </Link>
-       
-
           {/* Desktop Navigation */}
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>

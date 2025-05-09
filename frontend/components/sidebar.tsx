@@ -5,6 +5,7 @@ import { ChevronDown, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { Breadcrumb } from "./breadcrumb"
 
 type MenuItem = {
   title: string
@@ -59,6 +60,8 @@ export function Sidebar() {
     }
 
     return (
+      
+        
       <Collapsible
         key={itemPath}
         open={expanded}
@@ -81,6 +84,7 @@ export function Sidebar() {
           {item.items!.map((subItem) => renderMenuItem(subItem, level + 1, itemPath))}
         </CollapsibleContent>
       </Collapsible>
+     
     )
   }
 
@@ -110,7 +114,6 @@ export function Sidebar() {
                 { title: "Pop-up tms buying offer" },
                 { title: "How to video one heading" },
                 { title: "How to screenshot one heading" },
-                { title: "Pop-up tms buying offer" },
               ],
             },
             { title: "Menus" },
@@ -139,7 +142,6 @@ export function Sidebar() {
                 { title: "Pop-up tms sign-up offer" },
                 { title: "How to video one heading" },
                 { title: "How to screenshot one heading" },
-                { title: "Pop-up tms sign-up offer" },
               ],
             },
             { title: "Menus" },
@@ -167,8 +169,7 @@ export function Sidebar() {
                 { title: "How to screenshot multiple heading" },
                 { title: "Pop-up tms sign-up offer" },
                 { title: "How to video one heading" },
-                { title: "How to screenshot one heading" },
-                { title: "Pop-up tms sign-up offer" },
+                { title: "How to screenshot one heading" }
               ],
             },
             { title: "Menus" },
@@ -267,7 +268,16 @@ export function Sidebar() {
   ]
 
   return (
-    <div className="w-full md:w-64 lg:w-72 pr-0 md:pr-4 mb-8">
+    <div className="w-full sm:w-1/2">
+        <Breadcrumb />
+        <div className="mb-4 px-4">
+        <h1 className="text-2xl md:text-3xl font-bold mb-1">
+          Super administrator dashboard
+        </h1>
+        <h2 className="text-lg md:text-xl font-bold mb-4">
+          Web content management
+        </h2>
+      </div>
       <ScrollArea className="h-[calc(100vh-12rem)]">
         <div className="border-l-2 border-border pl-2 pr-2">{mainNavigation.map((item) => renderMenuItem(item))}</div>
       </ScrollArea>
