@@ -94,7 +94,7 @@ export function Sidebar() {
       title: "Courses",
       items: [
         {
-          title: "Software1",
+          title: "Mendeley Ref.Man.",
           items: [
             {
               title: "My learning",
@@ -122,7 +122,7 @@ export function Sidebar() {
           ],
         },
         {
-          title: "Software2",
+          title: "Zetero desk.",
           items: [
             {
               title: "My learning",
@@ -150,7 +150,7 @@ export function Sidebar() {
           ],
         },
         {
-          title: "Software3",
+          title: "EndNote21 desk.",
           items: [
             {
               title: "My learning",
