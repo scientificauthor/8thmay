@@ -40,7 +40,11 @@ export default function RootLayout({
               <main className="p-4 md:p-6 lg:p-8 flex-1">
                 <div className="flex items-center mb-6">
                   <div className="ml-auto">
-                    <ActionButtons customStyle="hidden sm:block" title="CMS/Moodle Editor Menus"  color=""/>
+                    <ActionButtons
+                      customStyle="hidden sm:block"
+                      title="CMS/Moodle Editor Menus"
+                      color=""
+                    />
                   </div>
                 </div>
                 <div className="max-w-7xl mx-auto">

@@ -1,7 +1,15 @@
 import { Search, Copy, Save, Plus, Trash, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function ActionButtons({customStyle,title,color}:{customStyle:string,title:string,color:string}) {
+export function ActionButtons({
+  customStyle,
+  title,
+  color,
+}: {
+  customStyle: string;
+  title: string;
+  color: string;
+}) {
   return (
     <div className={`${customStyle} flex-1 px-0 md:px-4 pb-16`}>
       <div className="flex flex-wrap items-center gap-2">
