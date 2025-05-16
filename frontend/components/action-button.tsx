@@ -1,9 +1,9 @@
 import { Search, Copy, Save, Plus, Trash, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function ActionButtons() {
+export function ActionButtons({customStyle,title,color}:{customStyle:string,title:string,color:string}) {
   return (
-    <div className="flex-1 px-0 md:px-4 pb-16">
+    <div className={`${customStyle} flex-1 px-0 md:px-4 pb-16`}>
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="outline-none" size="icon">
           <Search className="h-5 w-5" />
@@ -34,7 +34,7 @@ export function ActionButtons() {
         </Button>
       </div>
       <div>
-        <h1 className="text-md font-bold text-center">CMS/Moodle Editor Menus</h1>
+        <h1 className={`${color} text-md font-bold text-center`}>{title}</h1>
       </div>
     </div>
   );

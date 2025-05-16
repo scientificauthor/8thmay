@@ -3,12 +3,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { SuperAdminWebContentManagementHeader } from "@/components/super-admin-web-content-management-header";
+import { Breadcrumb } from "@/components/breadcrumb";
 import { Sidebar } from "@/components/sidebar";
 import { ActionButtons } from "@/components/action-button";
-import { Breadcrumb } from "@/components/breadcrumb";
-
+import { Footer } from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,31 +23,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-background dark:bg-gray-900 text-gray-900 dark:text-gray-100`}>
+      <body
+        className={`${inter.className} bg-background dark:bg-gray-900 text-gray-900 dark:text-gray-100`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen">
-            <Header/>
-            
+          <div className="flex flex-col gap-4 min-h-screen">
+            <SuperAdminWebContentManagementHeader />
+            <Breadcrumb />
             <div className="flex flex-1 sm:flex-row flex-col">
-              <Sidebar  />
-              <main className="p-4 md:p-6 lg:p-8">
+              <Sidebar />
+              <main className="p-4 md:p-6 lg:p-8 flex-1">
+                <div className="flex items-center mb-6">
+                  <div className="ml-auto">
+                    <ActionButtons customStyle="hidden sm:block" title="CMS/Moodle Editor Menus"  color=""/>
+                  </div>
+                </div>
                 <div className="max-w-7xl mx-auto">
-                  <div className="flex justify-between items-center mb-6">
-                    <ActionButtons  />
-                  </div>
-                  <div>
-                    {children}
-                  </div>
+                  <div>{children}</div>
                 </div>
               </main>
             </div>
-            
-            <Footer/>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
