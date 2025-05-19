@@ -1,0 +1,14 @@
+import React from 'react'
+
+const TelegramIcon = () => {
+  return (
+    <svg width="36" height="29" viewBox="0 0 36 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9.91016 7.75L22.16 21.25H26.615L14.3651 7.75H9.91016Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M9.91016 21.25L16.9763 15.5395M19.5447 13.4639L26.615 7.75" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M18.2637 0.5C27.6608 0.50012 35.4678 6.67388 35.4678 14.5C35.4678 22.3261 27.6608 28.4999 18.2637 28.5C8.86646 28.5 1.05859 22.3262 1.05859 14.5C1.05859 6.6738 8.86646 0.5 18.2637 0.5Z" stroke="white"/>
+    </svg>
+    
+  )
+}
+
+export default TelegramIcon

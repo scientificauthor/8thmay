@@ -1,0 +1,73 @@
+button {
+    cursor: pointer;
+}
+
+button.btn-outline {
+    border-color: var(--border-primary);
+    color: var(--primary-dark);
+    height: 52px;
+
+    @media (max-width:639.98) {
+        height: 40px;
+    }
+}
+
+button.btn-primary {
+    background-color: var(--primary-dark);
+}
+
+.auth-footer {
+    background-color: var(--footer-background);
+    color: var(--color-white);
+    padding: 18px;
+    text-align: center;
+}
+
+button {
+    border-radius: 10px;
+    @media (max-width:639.98) {
+     border-radius: 8px;
+    }
+}
+
+.form-control,
+select {
+    height: 52px;
+    box-shadow: none;
+
+    &:focus {
+        border-color: var(--border-primary);
+    }
+}
+
+button[role="checkbox"] {
+    border-radius: 4px;
+    height: 22px;
+    width: 22px;
+
+    @media (max-width:639.98) {
+        height: 18px;
+        width: 18px;
+    }
+}
+
+button[role="combobox"],
+input {
+    height: 52px;
+    box-shadow: none;
+    border-radius: 10px;
+
+    @media (max-width:640px) {
+        height: 40px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+}
+
+input:hover {
+    border-color: var(--border-primary);
+}
+
+::placeholder {
+    font-size: 14px;
+}
