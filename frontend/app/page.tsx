@@ -1,6 +1,9 @@
+import SuperadminDashboardPage from "./superadmin/page"
 
-export default function Home() {
+const home = () =>{
   return (
-    <div className="Home"></div>
+    <SuperadminDashboardPage/>
   )
 }
+
+export default home
