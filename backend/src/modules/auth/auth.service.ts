@@ -59,6 +59,7 @@ export class AuthService {
           access_token: tokens.access_token,
           refresh_token: tokens.refresh_token,
         });
+        
         const { data, error } = await this.supabase.auth.getSession();
         if (error) throw new BadRequestException(error.message);
     
