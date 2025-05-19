@@ -46,7 +46,7 @@ const LoginPage = () => {
   const handleFormSubmission = async (data: z.infer<typeof formSchema>) => {
     console.log(data);
     login(data, {
-      onSuccess: (data) => {
+      onSuccess: (data:any) => {
         console.log('Login success:', data);
         toast.success('Login successful!', {
           toastId: 'login-success',
