@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/',
-        destination: '/auth/signup',
+        destination: '/signup',
         permanent: true,
       },
     ]
