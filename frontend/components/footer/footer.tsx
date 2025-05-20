@@ -7,8 +7,8 @@ import { CCLicense } from "@/components/footer/cc-license"
 
 export function Footer() {
   return (
-    <footer className="border-t bg-green-950 text-white">
-      <div className="container px-4 py-8">
+    <footer className="border-t bg-green-950 text-white w-full">
+      <div className=" px-4 py-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <FooterLinks
             title="About Courses"

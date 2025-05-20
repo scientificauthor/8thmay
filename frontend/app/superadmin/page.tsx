@@ -20,14 +20,14 @@ export default function SuperadminDashboardPage() {
         <BreadcrumbNav items={breadcrumbItems} />
       </div>
 
-      <div className="container px-4 pb-8 pt-9">
+      <div className=" px-4 pb-8 pt-9">
         <div className="flex justify-between">
             <PageHeader title="Super administrator dashboard"  />
             
         </div>
         <div className="flex justify-between">
             <PageHeader subtitle="Web content management"/>
-            <div className="flex items-center gap-2">
+            <div className="flex items-end gap-2">
               <Button variant="ghost" className="hover:bg-slate-100 hover:text-slate-900" size="sm">
                 <Search className="h-4 w-4 " />
                 <span className="sr-only">Search</span>
@@ -51,7 +51,7 @@ export default function SuperadminDashboardPage() {
             </div>
         </div>
         <h1 className="text-[16px] font-bold flex justify-end">CMS/Moodle editor menus</h1>
-        <div className="flex flex-col md:flex-row gap-8 ml-[26px] mt-9">
+        <div className="flex flex-col md:flex-row gap-8  mt-9">
           <aside className="w-full md:w-64 shrink-0">
             <div className="sticky top-4">
               <SidebarMenu />

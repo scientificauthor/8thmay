@@ -25,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`} suppressContentEditableWarning>
+    <html lang="en" suppressContentEditableWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className="sticky top-0 "><HeaderNav/></div>
           {children}
         <Footer/>
