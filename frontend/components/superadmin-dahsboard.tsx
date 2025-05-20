@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 import { MenuItemProps } from "@/types/superadmin"
 import { menuData } from "@/constants/superadminpage"
 
-const MenuItem: React.FC<MenuItemProps> = ({ item, level, isExpanded = false }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ item, level }) => {
   const [expanded, setExpanded] = React.useState(false)
   const pathname = usePathname()
   const hasChildren = item.children && item.children.length > 0
