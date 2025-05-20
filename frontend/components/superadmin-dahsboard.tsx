@@ -74,7 +74,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level }) => {
       </div>
 
       {hasChildren && expanded && (
-        <ul className="w-full space-y-1">
+        <ul className="w-full  mt-1 ml-4 py-2 px-2 space-y-1">
           {item.children?.map((child, index) => (
             <MenuItem key={index} item={child} level={level + 1} />
           ))}
@@ -95,4 +95,3 @@ export function Superadminaccordion() {
     </div>
   )
 }
-  

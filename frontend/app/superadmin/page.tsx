@@ -16,18 +16,18 @@ export default function SuperadminDashboardPage() {
         </div>
       </header>
 
-      <main className="flex-1">
+      <main>
         <div className=" px-4 py-4">
           <div className="flex flex-col ">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
               <PageHeader title="Content management" />
             </div>
-            
+
             <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-4">
               <PageHeader subtitle="" />
               <div className="flex flex-wrap items-center gap-0.5 md:gap-4 mt-2 md:mt-0">
                 <Button variant="ghost" className="hover:bg-slate-100 hover:text-slate-900" size="sm">
-                  <Search className="h-4 w-4" />  
+                  <Search className="h-4 w-4" />
                   <span className="sr-only">Search</span>
                 </Button>
                 <Button variant="ghost" className="hover:bg-slate-100 hover:text-slate-900" size="sm">
