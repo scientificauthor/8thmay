@@ -1,10 +1,10 @@
-import Link from "next/link"
-import { FooterLinksProps } from "@/types/footer"
+import Link from "next/link";
+import { FooterLinksProps } from "@/types/footer";
 
 export function FooterLinks({ title, links }: FooterLinksProps) {
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold">{title}</h3>
+      <h3 className="text-[#A5A5A5]">{title}</h3>
       <ul className="space-y-2">
         {links.map((link, index) => (
           <li key={index}>
@@ -15,5 +15,5 @@ export function FooterLinks({ title, links }: FooterLinksProps) {
         ))}
       </ul>
     </div>
-  )
+  );
 }
