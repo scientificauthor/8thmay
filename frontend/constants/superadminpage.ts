@@ -7,161 +7,127 @@ export  const superadminbreadcrumbItems = [
 ]
 
 export const menuData: MenuItem[] = [
-    {
-      title: "Courses",
-      children: [
-        {
-          title: "Software1",
-          isExpanded: true,
-          children: [
-            {
-              title: "My learning",
-              isExpanded: true,
-              children: [
-                {
-                  title: "Course Material",
-                  isExpanded: true,
-                  children: [
-                    { title: "Quizzes", href: "#" },
-                    { title: "Syllabus", href: "#" },
-                  ],
-                },
-              ],
-            },
-            {
-              title: "Info",
-              href: "#",
-            },
-            {
-              title: "How to",
-              isExpanded: true,
-              children: [
-                { title: "How to video multiple heading", href: "#" },
-                { title: "How to screenshot multiple heading", href: "#" },
-                { title: "Pop-up/pre buying offer", href: "#" },
-                { title: "How to video one heading", href: "#" },
-                { title: "How to screenshot one heading", href: "#" },
-                { title: "Pop-up/pre buying offer", href: "#" },
-              ],
-            },
-            {
-              title: "Menus",
-              href: "#",
-            },
-            {
-              title: "Specifications",
-              href: "#",
-            },
-            {
-              title: "FAQ",
-              href: "#",
-            },
-          ],
-        },
-        {
-          title: "Software2",
-          isExpanded: true,
-          children: [
-            {
-              title: "My learning",
-              isExpanded: true,
-              children: [
-                {
-                  title: "Course Material",
-                  isExpanded: true,
-                  children: [
-                    { title: "Quizzes", href: "#" },
-                    { title: "Syllabus", href: "#" },
-                  ],
-                },
-              ],
-            },
-            {
-              title: "Info",
-              href: "#",
-            },
-            {
-              title: "How to",
-              isExpanded: true,
-              children: [
-                { title: "How to video multiple heading", href: "#" },
-                { title: "How to screenshot multiple heading", href: "#" },
-                { title: "Pop-up/pre sign-up offer", href: "#" },
-                { title: "How to video one heading", href: "#" },
-                { title: "How to screenshot one heading", href: "#" },
-                { title: "Pop-up/pre sign-up offer", href: "#" },
-              ],
-            },
-            {
-              title: "Menus",
-              href: "#",
-            },
-            {
-              title: "Specifications",
-              href: "#",
-            },
-            {
-              title: "FAQ",
-              href: "#",
-            },
-          ],
-        },
-        {
-          title: "Software3",
-          isExpanded: true,
-          children: [
-            {
-              title: "My learning",
-              isExpanded: true,
-              children: [
-                {
-                  title: "Course Material",
-                  isExpanded: true,
-                  children: [
-                    { title: "Quizzes", href: "#" },
-                    { title: "Syllabus", href: "#" },
-                  ],
-                },
-              ],
-            },
-            {
-              title: "Info",
-              href: "#",
-            },
-            {
-              title: "How to",
-              isExpanded: true,
-              children: [
-                { title: "How to video multiple heading", href: "#" },
-                { title: "How to screenshot multiple heading", href: "#" },
-                { title: "Pop-up/pre sign-up offer", href: "#" },
-                { title: "How to video one heading", href: "#" },
-                { title: "How to screenshot one heading", href: "#" },
-                { title: "Pop-up/pre sign-up offer", href: "#" },
-              ],
-            },
-            {
-              title: "Menus",
-              href: "#",
-            },
-            {
-              title: "Specifications",
-              href: "#",
-            },
-            {
-              title: "FAQ",
-              href: "#",
-            },
-          ],
-        },
-      ],
-    },
+  {
+    "title": "Courses",
+    "isExpanded": true,
+    "children": [
+      {
+        "title": "Mendeley Ref. Man.",
+        "isExpanded": true,
+        "children": [
+          {
+            "title": "My learning",
+            "isExpanded": true,
+            "children": [
+              {
+                "title": "Course Material",
+                "isExpanded": true,
+                "children": [
+                  { "title": "Quizzes", "href": "#" },
+                  { "title": "Syllabus", "href": "#" }
+                ]
+              }
+            ]
+          },
+          { "title": "Info", "href": "#" },
+          {
+            "title": "How to",
+            "isExpanded": true,
+            "children": [
+              { "title": "How to video multiple heading", "href": "#" },
+              { "title": "How to screenshot multiple heading", "href": "#" },
+              { "title": "Pop-up ims buying offer", "href": "#" },
+              { "title": "How to video one heading", "href": "#" },
+              { "title": "How to screenshot one heading", "href": "#" },
+              { "title": "Pop-up ims buying offer", "href": "#" }
+            ]
+          },
+          { "title": "Menus", "href": "#" },
+          { "title": "Specifications", "href": "#" },
+          { "title": "FAQ", "href": "#" }
+        ]
+      },
+      {
+        "title": "Zotero desk.",
+        "isExpanded": true,
+        "children": [
+          {
+            "title": "My learning",
+            "isExpanded": true,
+            "children": [
+              {
+                "title": "Course Material",
+                "isExpanded": true,
+                "children": [
+                  { "title": "Quizzes", "href": "#" },
+                  { "title": "Syllabus", "href": "#" }
+                ]
+              }
+            ]
+          },
+          { "title": "Info", "href": "#" },
+          {
+            "title": "How to",
+            "isExpanded": true,
+            "children": [
+              { "title": "How to video multiple heading", "href": "#" },
+              { "title": "How to screenshot multiple heading", "href": "#" },
+              { "title": "Pop-up ims sign-up offer", "href": "#" },
+              { "title": "How to video one heading", "href": "#" },
+              { "title": "How to screenshot one heading", "href": "#" },
+              { "title": "Pop-up ims sign-up offer", "href": "#" }
+            ]
+          },
+          { "title": "Menus", "href": "#" },
+          { "title": "Specifications", "href": "#" },
+          { "title": "FAQ", "href": "#" }
+        ]
+      },
+      {
+        "title": "EndNote2025 desk.",
+        "isExpanded": true,
+        "children": [
+          {
+            "title": "My learning",
+            "isExpanded": true,
+            "children": [
+              {
+                "title": "Course Material",
+                "isExpanded": true,
+                "children": [
+                  { "title": "Quizzes", "href": "#" },
+                  { "title": "Syllabus", "href": "#" }
+                ]
+              }
+            ]
+          },
+          { "title": "Info", "href": "#" },
+          {
+            "title": "How to",
+            "isExpanded": true,
+            "children": [
+              { "title": "How to video multiple heading", "href": "#" },
+              { "title": "How to screenshot multiple heading", "href": "#" },
+              { "title": "Pop-up ims sign-up offer", "href": "#" },
+              { "title": "How to video one heading", "href": "#" },
+              { "title": "How to screenshot one heading", "href": "#" },
+              { "title": "Pop-up ims sign-up offer", "href": "#" }
+            ]
+          },
+          { "title": "Menus", "href": "#" },
+          { "title": "Specifications", "href": "#" },
+          { "title": "FAQ", "href": "#" }
+        ]
+      }
+    ]
+  }
+  ,
     {
       title: "Online live courses",
       isExpanded: true,
       children: [
         {
-          title: "Software1",
+          title: "Mendeley Ref. Man.",
           isExpanded: true,
           children: [
             {
@@ -180,7 +146,7 @@ export const menuData: MenuItem[] = [
           ],
         },
         {
-          title: "Software2",
+          title: "Zotero desk.",
           isExpanded: true,
           children: [
             {
@@ -199,7 +165,7 @@ export const menuData: MenuItem[] = [
           ],
         },
         {
-          title: "Software3",
+          title: "EndNote21 desk.",
           isExpanded: true,
           children: [
             {
@@ -267,12 +233,13 @@ export const menuData: MenuItem[] = [
       isExpanded: true,
       children: [
         {
-          title: "About Softwares",
+          title: "About Reference Managers",
           isExpanded: true,
           children: [
             { title: "Comparisons" },
             { title: "Developments" },
             { title: "Literature" },
+            {title:"Citation Styles"}
           ],
         },
         { title: "About Us" },

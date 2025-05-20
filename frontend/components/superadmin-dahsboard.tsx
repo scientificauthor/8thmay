@@ -7,12 +7,15 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { MenuItemProps } from "@/types/superadmin"
 import { menuData } from "@/constants/superadminpage"
+import { hasActiveDescendant } from "@/lib/tree-utils"
 
 const MenuItem: React.FC<MenuItemProps> = ({ item, level }) => {
   const [expanded, setExpanded] = React.useState(false)
   const pathname = usePathname()
   const hasChildren = item.children && item.children.length > 0
+
   const isActive = pathname === item.href
+  const isParentActive = hasActiveDescendant(item, pathname)
 
   const toggleExpand = (e: React.MouseEvent) => {
     if (hasChildren) {
@@ -26,8 +29,8 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level }) => {
       <div
         className={cn(
           "flex items-center w-full",
-          isActive ? "font-medium text-[#009900]" : "text-gray-800",
-          level === 0 ? "font-medium" : "",
+          isActive || isParentActive ? "font-medium text-[#009900]" : "text-gray-800",
+          level === 0 ? "font-medium" : ""
         )}
       >
         <div
@@ -40,21 +43,34 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level }) => {
           onClick={toggleExpand}
         >
           {item.href ? (
-            <Link href={item.href} className="flex-1 truncate">
+            <Link
+              href={item.href}
+              className="flex items-center gap-[4px] flex-1 truncate"
+            >
               {item.title}
+              {hasChildren && (
+                <span className={cn(
+                  "flex-shrink-0",
+                  isActive || isParentActive || expanded ? "text-[#009900]" : "text-gray-500"
+                )}>
+                  {expanded ? <ChevronDown className="h-3 w-3" /> : <ChevronRight className="h-3 w-3" />}
+                </span>
+              )}
             </Link>
           ) : (
-            <span className="flex-1 truncate">{item.title}</span>
-          )}
-          {hasChildren && (
-            <span className={cn(
-              "ml-1 flex-shrink-0",
-              isActive ? "text-[#009900]" : "text-gray-500"
-            )}>
-              {expanded ? <ChevronDown className="h-3 w-3" /> : <ChevronRight className="h-3 w-3" />}
+            <span className="flex items-center gap-[4px] flex-1 truncate">
+              {item.title}
+              {hasChildren && (
+                <span className={cn(
+                  "flex-shrink-0",
+                  isActive || isParentActive || expanded ? "text-[#009900]" : "text-gray-500"
+                )}>
+                  {expanded ? <ChevronDown className="h-3 w-3" /> : <ChevronRight className="h-3 w-3" />}
+                </span>
+              )}
             </span>
           )}
-        </div>  
+        </div>
       </div>
 
       {hasChildren && expanded && (
@@ -79,3 +95,4 @@ export function Superadminaccordion() {
     </div>
   )
 }
+  
