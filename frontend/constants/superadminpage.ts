@@ -1,5 +1,11 @@
 import { MenuItem } from "@/types/superadmin";
 
+export  const superadminbreadcrumbItems = [
+  { title: "(a)", href: "#" },    
+  { title: "Super administrator dashboard", href: "#" },
+  { title: "Web content management" },
+]
+
 export const menuData: MenuItem[] = [
     {
       title: "Courses",

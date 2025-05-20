@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressContentEditableWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="sticky top-0 "><HeaderNav/></div>
+        <div className="sticky top-0 z-9999"><HeaderNav/></div>
           {children}
         <Footer/>
       </body>

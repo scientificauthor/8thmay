@@ -3,16 +3,16 @@
 import React from "react"
 import { ChevronDown, ChevronRight } from "lucide-react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { MenuItemProps } from "@/types/superadmin"
 import { menuData } from "@/constants/superadminpage"
 
-
-
-
 const MenuItem: React.FC<MenuItemProps> = ({ item, level, isExpanded = false }) => {
-  const [expanded, setExpanded] = React.useState(item.isExpanded || isExpanded)
+  const [expanded, setExpanded] = React.useState(false)
+  const pathname = usePathname()
   const hasChildren = item.children && item.children.length > 0
+  const isActive = pathname === item.href
 
   const toggleExpand = (e: React.MouseEvent) => {
     if (hasChildren) {
@@ -26,35 +26,39 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level, isExpanded = false }) 
       <div
         className={cn(
           "flex items-center w-full",
-          item.isActive ? "font-medium text-green-700" : "text-gray-800",
+          isActive ? "font-medium text-[#009900]" : "text-gray-800",
           level === 0 ? "font-medium" : "",
         )}
       >
         <div
           style={{ paddingLeft: `${level * 16}px` }}
           className={cn(
-            "flex items-center py-1.5 w-full hover:bg-gray-100 cursor-pointer",
+            "flex items-center py-2 w-full hover:bg-gray-100 cursor-pointer rounded-md transition-colors",
             level === 0 ? "text-sm" : "text-[14px]",
+            isActive && "text-[#009900] hover:text-[#009900]"
           )}
           onClick={toggleExpand}
         >
-          {hasChildren && (
-            <span className="mr-1 text-gray-500">
-              {expanded ? <ChevronDown className="h-3 w-3" /> : <ChevronRight className="h-3 w-3" />}
-            </span>
-          )}
           {item.href ? (
-            <Link href={item.href} className="flex-1">
+            <Link href={item.href} className="flex-1 truncate">
               {item.title}
             </Link>
           ) : (
-            <span className="flex-1">{item.title}</span>
+            <span className="flex-1 truncate">{item.title}</span>
           )}
-        </div>
+          {hasChildren && (
+            <span className={cn(
+              "ml-1 flex-shrink-0",
+              isActive ? "text-[#009900]" : "text-gray-500"
+            )}>
+              {expanded ? <ChevronDown className="h-3 w-3" /> : <ChevronRight className="h-3 w-3" />}
+            </span>
+          )}
+        </div>  
       </div>
 
       {hasChildren && expanded && (
-        <ul className="w-full">
+        <ul className="w-full space-y-1">
           {item.children?.map((child, index) => (
             <MenuItem key={index} item={child} level={level + 1} />
           ))}
@@ -64,10 +68,10 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level, isExpanded = false }) 
   )
 }
 
-export function SidebarMenu() {
+export function Superadminaccordion() {
   return (
-    <div className="w-full max-w-xs">
-      <ul className="w-full">
+    <div className="w-full p-4">
+      <ul className="w-full space-y-1">
         {menuData.map((item, index) => (
           <MenuItem key={index} item={item} level={0} />
         ))}
@@ -75,4 +79,3 @@ export function SidebarMenu() {
     </div>
   )
 }
-    

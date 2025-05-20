@@ -3,4 +3,5 @@ export interface NavItem {
   href: string
   isActive?: boolean
   hasDropdown?: boolean
+  children?: NavItem[]
 } 
