@@ -144,6 +144,7 @@ export function HeaderNav() {
                   }
                 }}
                 aria-label={accountMenuOpen ? "Back to main menu" : "Close menu"}
+                className="hover:bg-gray-100 rounded-full p-1 transition-colors"
               >
                 {accountMenuOpen ? <ChevronLeft className="h-6 w-6" /> : <X className="h-6 w-6" />}
               </button>
@@ -157,13 +158,13 @@ export function HeaderNav() {
               </Link>
             </div>
 
-            <Search className="h-6 w-6" />
+            <Search className="h-6 w-6 cursor-pointer hover:text-gray-800 transition-colors" />
           </div>
 
           {!accountMenuOpen ? (
             <>
               <div
-                className="flex items-center gap-4 p-4 border-b cursor-pointer"
+                className="flex items-center gap-4 p-4 border-b cursor-pointer hover:bg-gray-100 transition-colors"
                 onClick={() => setAccountMenuOpen(true)}
               >
                 <div className="flex items-center justify-center rounded-full bg-gray-200 h-10 w-10">
@@ -189,7 +190,7 @@ export function HeaderNav() {
                   <div key={index}>
                     <Link
                       href={item.href}
-                      className="p-4  w-full flex items-center justify-between"
+                      className="p-4 w-full flex items-center justify-between hover:bg-gray-100 transition-colors"
                       onClick={(e) => {
                         if (item.hasDropdown) {
                           e.preventDefault()
@@ -206,10 +207,10 @@ export function HeaderNav() {
                 ))}
               </nav>
 
-              <div className="mt-4 border-t w-full overflow-x-hidden">
+              <div className="mt-2 w-full overflow-x-hidden ">
                 <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="reference-managers">
-                    <AccordionTrigger className="px-4 font-normal">
+                  <AccordionItem value="reference-managers" className="ml-[64px] text-[16px]">
+                    <AccordionTrigger className="px-4 font-normal hover:bg-gray-100 transition-colors">
                       Reference Managers
                     </AccordionTrigger>
                     <AccordionContent>
@@ -218,7 +219,7 @@ export function HeaderNav() {
                           <Link
                             key={index}
                             href={child.href}
-                            className="p-4 w-full flex items-center hover:bg-gray-50 ml-8"
+                            className="p-4 w-full flex items-center hover:bg-gray-100 transition-colors ml-8"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {child.title}
@@ -234,47 +235,53 @@ export function HeaderNav() {
             <div className="p-4 bg-white min-h-screen">
               {/* Header */}
               <div className="mb-6 flex items-center gap-2">
-                {/* <ChevronLeft className="h-5 w-5" /> */}
-                <h2 className="text-lg font-semibold ml-[65px]">Main Menu</h2>
+                <button
+                  onClick={() => setAccountMenuOpen(false)}
+                  aria-label="Go back to main menu"
+                  className="hover:bg-gray-100 rounded-full p-1 transition-colors"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+                <h2 className="text-lg font-semibold ml-[16px]">Main Menu</h2>
               </div>
 
               <div className="space-y-4 ml-[64px]">
                 {/* Account Settings */}
-                <div className="flex items-center gap-3 p-3">
+                <div className="flex items-center gap-3 p-3 cursor-pointer hover:bg-gray-100 transition-colors">
                   <Settings className="h-5 w-5 text-gray-600" />
                   <span className="text-gray-800">Account Settings</span>
                 </div>
 
                 {/* Notifications */}
-                <div className="flex items-center gap-3 p-3">
+                <div className="flex items-center gap-3 p-3 cursor-pointer hover:bg-gray-100 transition-colors">
                   <Bell className="h-5 w-5 text-gray-600" />
                   <span className="text-gray-800">Notifications</span>
                 </div>
 
                 {/* Language */}
-                <div className="flex items-center gap-3 p-3">
+                <div className="flex items-center gap-3 p-3 cursor-pointer hover:bg-gray-100 transition-colors">
                   <Globe className="h-5 w-5 text-gray-600" />
                   <span className="text-gray-800">Language</span>
                 </div>
 
                 {/* Theme Section */}
                 <div className="space-y-2">
-                  <div className="flex items-center gap-3 p-3">
+                  <div className="flex items-center gap-3 p-3 cursor-pointer hover:bg-gray-100 transition-colors">
                     <Sun className="h-5 w-5 text-gray-600" />
                     <span className="text-gray-800">Theme: Light</span>
                   </div>
                   <div className="ml-10 space-y-2">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-100 transition-colors">
                       <Laptop className="h-5 w-5 text-gray-600" />
                       <span className="text-gray-800">Auto</span>
                     </div>
                     <p className="text-sm text-gray-500 ml-8">Use the same theme as your device</p>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-100 transition-colors">
                       <Sun className="h-5 w-5 text-gray-600" />
                       <span className="text-gray-800">Light</span>
                     </div>
                     <p className="text-sm text-gray-500 ml-8">Light background with dark text.</p>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-100 transition-colors">
                       <Moon className="h-5 w-5 text-gray-600" />
                       <span className="text-gray-800">Dark</span>
                     </div>
@@ -284,8 +291,8 @@ export function HeaderNav() {
 
                 {/* Logout Button */}
               </div>
-              <button className="w-full flex items-center gap-2 ml-[64px] text-gray-800 border-b border-t p-2">
-                <LogOut className="h-5 w-5 text-gray-600" />
+              <button className="w-full flex items-center gap-2 text-gray-800 border-b border-t p-2 hover:bg-gray-100 transition-colors">
+                <LogOut className="h-5 w-5 text-gray-600 ml-[64px]" />
                 <span>Logout</span>
               </button>
             </div>
