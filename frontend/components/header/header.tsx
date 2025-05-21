@@ -176,7 +176,7 @@ export function HeaderNav() {
                     scrolled ? "text-white" : "text-gray-600"
                   )}
                 />
-                <div className="flex items-center justify-center rounded-full bg-green-700 h-8 w-8">
+                <div className="flex items-center justify-center rounded-full bg-[#38571A] h-8 w-8">
                   <User className="h-5 w-5 text-white" />
                 </div>
               </>

@@ -2,13 +2,19 @@
 
 import * as React from "react"
 import * as SwitchPrimitive from "@radix-ui/react-switch"
+import { Sun, Moon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+interface SwitchProps extends React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root> {
+  isDarkMode?: boolean;
+}
+
 function Switch({
   className,
+  isDarkMode,
   ...props
-}: React.ComponentProps<typeof SwitchPrimitive.Root>) {
+}: SwitchProps) {
   return (
     <SwitchPrimitive.Root
       data-slot="switch"
@@ -21,9 +27,15 @@ function Switch({
       <SwitchPrimitive.Thumb
         data-slot="switch-thumb"
         className={cn(
-          "bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"
+          "bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0  items-center justify-center",
         )}
-      />
+      >
+        {isDarkMode ? (
+          <Moon className="h-3 w-3 text-gray-700 dark:text-white" />
+        ) : (
+          <Sun className="h-3 w-3 text-gray-700 dark:text-white" />
+        )}
+      </SwitchPrimitive.Thumb>
     </SwitchPrimitive.Root>
   )
 }

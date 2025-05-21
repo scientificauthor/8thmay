@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { ChevronDown, ChevronRight } from "lucide-react"
+import { ChevronDown, ChevronRight, ChevronUp } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -65,7 +65,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level }) => {
                   "flex-shrink-0",
                   isActive || isParentActive || expanded ? "text-[#009900]" : "text-gray-500"
                 )}>
-                  {expanded ? <ChevronDown className="h-3 w-3" /> : <ChevronRight className="h-3 w-3" />}
+                  {expanded ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
                 </span>
               )}
             </span>
