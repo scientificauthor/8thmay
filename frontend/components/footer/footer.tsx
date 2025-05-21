@@ -1,10 +1,11 @@
 "use client";
 
-import { Globe, ArrowUp, Instagram, Twitter } from "lucide-react";
+import { Globe, ArrowUp, Youtube, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { FooterLinks } from "@/components/footer/footer-links";
 import { FooterContact } from "@/components/footer/footer-contact";
+import { Switch } from "@/components/ui/switch";
 import {
   Accordion,
   AccordionContent,
@@ -15,7 +16,7 @@ import {
 export function Footer() {
   return (
     <footer className="border-t bg-[#001E00] text-white w-full sm:px-4">
-      <div className="mt-8 flex items-center justify-between pl-3 hidden sm:flex">
+      <div className="mt-8 flex items-center justify-between pl-3  sm:flex">
         <Button
           variant="outline"
           className="rounded-md border-white bg-transparent text-white hover:bg-white hover:text-green-950"
@@ -68,7 +69,7 @@ export function Footer() {
           </div>
 
           {/* Medium+ screens: Show About Courses and Company side by side */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex md:flex-col md:gap-4">
             <FooterLinks
               title="About Courses"
               links={[
@@ -79,6 +80,9 @@ export function Footer() {
                 { label: "Pricing", href: "#" },
               ]}
             />
+            <div className="mt-4 flex items-center">
+              <Switch />
+            </div>
           </div>
 
           <div className="hidden md:block">
@@ -100,14 +104,14 @@ export function Footer() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full text-white hover:bg-white hover:text-green-950 border"
+                className="rounded-4xl text-white hover:bg-white hover:text-green-950 border"
               >
-                <Instagram className="h-4 w-4" />
+                <Youtube className="h-4 w-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full text-white hover:bg-white hover:text-green-950 border"
+                className="rounded-4xl text-white hover:bg-white hover:text-green-950 border"
               >
                 <Twitter className="h-4 w-4" />
               </Button>
@@ -115,8 +119,8 @@ export function Footer() {
                 Follow Us
               </div>
             </div>
-            <Button className=" text-white bg-transparent hover:bg-transparent flex-col items-end  w-full my-3 ml-2 hidden sm:flex">
-              <ArrowUp className="rounder size-5 bg-green-500" />
+            <Button className=" text-white bg-transparent hover:bg-transparent flex-col items-end  w-full my-3 ml-2 hidden sm:flex" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+              <ArrowUp className="rounded-4xl size-5 bg-green-500" />
               <span className="text-xs font-light"> Go To Top</span>
             </Button>
           </div>
@@ -131,7 +135,7 @@ export function Footer() {
           <div className="text-xs text-[#A5A5A5] sm:text-white">
             <span className="hidden sm:inline">Copyright</span> © 2025{" "}
             <span className="">(citehub).</span>
-            <span className="text-11">1</span>
+            <sup className="text-11">1</sup>
             .inc{" "}
             <span className="hidden sm:inline">
               all rights reserved |{" "}
@@ -145,7 +149,7 @@ export function Footer() {
         </div>
 
         {/* Policies Section */}
-        <div className="mt-4 flex flex-wrap  justify-center gap-2 text-xs sm:justify-end flex-col sm:flex-row items-start pl-3">
+        <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs sm:justify-end flex-col sm:flex-row items-start pl-3 relative">
           <a href="#" className="hover:underline">
             Terms & Conditions
           </a>
@@ -161,6 +165,17 @@ export function Footer() {
           <a href="#" className="hover:underline">
             Cookie Settings
           </a>
+          <Button
+            size="sm"
+            className="ml-2 text-white bg-transparent hover:bg-transparent flex-col items-end w-full my-3 px-4 py-2 sm:ml-4 mt-0 md:hidden absolute bottom-0 right-0 rounded-4xl"
+            style={{ minWidth: "48px", minHeight: "48px" }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <span className="inline-flex items-center justify-center p-1 rounded-2xl bg-green-500">
+              <ArrowUp className="h-9 w-9 text-white" />
+            </span>
+            <span className="text-[13px] font-light">Go To Top</span>
+          </Button>
         </div>
 
         <div className="mt-8 flex items-center justify-between sm:hidden">
@@ -172,13 +187,9 @@ export function Footer() {
             Turkish
           </Button>
 
-          <Button
-            size="sm"
-            className=" text-white  bg-transparent flex flex-col items-end"
-          >
-            <ArrowUp className="h-5 w-5 bg-green-500 hover:bg-transparent" />
-            <span className="text-sm font-light"> Go To Top</span>
-          </Button>
+          <div className="mt-2 flex items-center">
+            <Switch />
+          </div>
         </div>
       </div>
     </footer>
