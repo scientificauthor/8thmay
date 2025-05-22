@@ -29,14 +29,14 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level }) => {
       <div
         className={cn(
           "flex items-center w-full",
-          isActive || isParentActive ? "font-medium text-[#009900]" : "text-gray-800",
+          isActive || isParentActive ? "font-medium text-[#009900]" : "text-gray-800 dark:text-gray-200",
           level === 0 ? "font-medium" : ""
         )}
       >
         <div
           style={{ paddingLeft: `${level * 16}px` }}
           className={cn(
-            "flex items-center py-2 w-full hover:bg-gray-100 cursor-pointer rounded-md transition-colors",
+            "flex items-center py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-md transition-colors",
             level === 0 ? "text-sm" : "text-[14px]",
             isActive && "text-[#009900] hover:text-[#009900]"
           )}
@@ -45,25 +45,25 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level }) => {
           {item.href ? (
             <Link
               href={item.href}
-              className="flex items-center gap-[4px] flex-1 truncate"
+              className="flex items-center gap-[4px] flex-1 truncate text-gray-800 dark:text-gray-200"
             >
               {item.title}
               {hasChildren && (
                 <span className={cn(
                   "flex-shrink-0",
-                  isActive || isParentActive || expanded ? "text-[#009900]" : "text-gray-500"
+                  isActive || isParentActive || expanded ? "text-[#009900]" : "text-gray-500 dark:text-gray-400"
                 )}>
                   {expanded ? <ChevronDown className="h-3 w-3" /> : <ChevronRight className="h-3 w-3" />}
                 </span>
               )}
             </Link>
           ) : (
-            <span className="flex items-center gap-[4px] flex-1 truncate">
+            <span className="flex items-center gap-[4px] flex-1 truncate text-gray-800 dark:text-gray-200">
               {item.title}
               {hasChildren && (
                 <span className={cn(
                   "flex-shrink-0",
-                  isActive || isParentActive || expanded ? "text-[#009900]" : "text-gray-500"
+                  isActive || isParentActive || expanded ? "text-[#009900]" : "text-gray-500 dark:text-gray-400"
                 )}>
                   {expanded ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
                 </span>
@@ -74,7 +74,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level }) => {
       </div>
 
       {hasChildren && expanded && (
-        <ul className="w-full  mt-1 ml-4 py-2 px-2 space-y-1">
+        <ul className="w-full mt-1 ml-4 py-2 px-2 space-y-1">
           {item.children?.map((child, index) => (
             <MenuItem key={index} item={child} level={level + 1} />
           ))}
@@ -87,7 +87,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level }) => {
 export function Superadminaccordion() {
   return (
     <div className="w-full p-4">
-      <ul className="w-full space-y-1">
+      <ul className="w-full space-y-1 dark:text-white">
         {menuData.map((item, index) => (
           <MenuItem key={index} item={item} level={0} />
         ))}

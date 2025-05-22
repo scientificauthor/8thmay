@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { HeaderNav } from "@/components/header/header";
 import { Footer } from "@/components/footer/footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,9 +28,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressContentEditableWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="sticky top-0 z-9999"><HeaderNav/></div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+          storageKey="citehub-theme"
+        >
+          <div className="sticky top-0 z-9999"><HeaderNav /></div>
           {children}
-        <Footer/>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

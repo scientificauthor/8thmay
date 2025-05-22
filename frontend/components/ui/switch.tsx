@@ -27,13 +27,13 @@ function Switch({
       <SwitchPrimitive.Thumb
         data-slot="switch-thumb"
         className={cn(
-          "bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0  items-center justify-center",
+          "bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0  items-center justify-center pl-0.5 pt-0.5",
         )}
       >
         {isDarkMode ? (
-          <Moon className="h-3 w-3 text-gray-700 dark:text-white" />
+          <Moon className="h-3 w-3 items-center text-gray-700 dark:text-white" />
         ) : (
-          <Sun className="h-3 w-3 text-gray-700 dark:text-white" />
+          <Sun className="h-3 w-3 items-center text-gray-700 dark:text-white" />
         )}
       </SwitchPrimitive.Thumb>
     </SwitchPrimitive.Root>

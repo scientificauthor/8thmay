@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { FooterLinks } from "@/components/footer/footer-links";
 import { FooterContact } from "@/components/footer/footer-contact";
-import { Switch } from "@/components/ui/switch";
-import { useState } from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
 import {
   Accordion,
   AccordionContent,
@@ -15,14 +14,12 @@ import {
 } from "@/components/ui/accordion";
 
 export function Footer() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
   return (
-    <footer className="border-t bg-[#001E00] text-white w-full sm:px-4">
-      <div className="mt-8 flex items-center justify-between pl-3  sm:flex">
+    <footer className="border-t bg-[#001E00] dark:bg-gray-900 text-white w-full sm:px-4">
+      <div className="mt-8 flex items-center justify-between pl-3 sm:flex">
         <Button
           variant="outline"
-          className="rounded-md border-white bg-transparent text-white hover:bg-white hover:text-green-950"
+          className="rounded-md border-white bg-transparent text-white hover:bg-white hover:text-green-950 dark:hover:bg-gray-800"
         >
           <Globe className="mr-2 h-4 w-4" />
           Turkish
@@ -35,7 +32,7 @@ export function Footer() {
           <div className="block md:hidden">
             <Accordion type="multiple">
               <AccordionItem value="about-courses">
-                <AccordionTrigger className="font-light">
+                <AccordionTrigger className="font-light text-white">
                   About Courses
                 </AccordionTrigger>
                 <AccordionContent>
@@ -52,7 +49,7 @@ export function Footer() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="company">
-                <AccordionTrigger className="font-light">
+                <AccordionTrigger className="font-light text-white">
                   Company
                 </AccordionTrigger>
                 <AccordionContent>
@@ -84,12 +81,7 @@ export function Footer() {
               ]}
             />
             <div className="mt-4 flex items-center">
-              <Switch
-                checked={isDarkMode}
-                onCheckedChange={setIsDarkMode}
-                className="data-[state=checked]:bg-green-500"
-                isDarkMode={isDarkMode}
-              />
+              <ThemeToggle />
             </div>
           </div>
 
@@ -122,14 +114,14 @@ export function Footer() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full text-white hover:bg-white hover:text-green-950 border"
+                  className="rounded-full text-white hover:bg-white hover:text-green-950 dark:hover:bg-gray-800 border"
                 >
                   <Youtube className="h-4 w-4" />
                 </Button>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full text-white hover:bg-white hover:text-black border group"
+                  className="rounded-full text-white hover:bg-white hover:text-black dark:hover:bg-gray-800 border group"
                 >
                   {/* Twitter SVG Icon */}
                   <svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-4 w-4">
@@ -137,7 +129,7 @@ export function Footer() {
                     <path d="M4.78882 17.25L11.8549 11.5395M14.4233 9.46388L21.4936 3.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Button>
-                <div className="text-xs hidden sm:block text-[#A5A5A5]">
+                <div className="text-xs hidden sm:block text-[#A5A5A5] dark:text-gray-400">
                   Follow Us
                 </div>
               </div>
@@ -146,12 +138,11 @@ export function Footer() {
         </div>
 
         {/* Language + Scroll To Top */}
-
-        <Separator className="my-6 bg-green-900 sm:hidden" />
+        <Separator className="my-6 bg-green-900 dark:bg-gray-700 sm:hidden" />
 
         {/* Footer Bottom Section */}
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:-mb-8 mt-4">
-          <div className="text-xs text-[#A5A5A5] sm:text-white">
+          <div className="text-xs text-[#A5A5A5] dark:text-gray-400 sm:text-white">
             <span className="hidden sm:inline">Copyright</span> © 2025{" "}
             <span className="">(citehub).</span>
             <sup className="text-11">1</sup>
@@ -163,25 +154,23 @@ export function Footer() {
               </a>
             </span>
           </div>
-
-          {/* <CCLicense /> */}
         </div>
 
         {/* Policies Section */}
         <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs sm:justify-end flex-col sm:flex-row items-start pl-3 relative">
-          <a href="#" className="hover:underline">
+          <a href="#" className="hover:underline text-white">
             Terms & Conditions
           </a>
-          <span className="hidden sm:inline">|</span>
-          <a href="#" className="hover:underline">
+          <span className="hidden sm:inline text-white">|</span>
+          <a href="#" className="hover:underline text-white">
             Privacy Policy
           </a>
-          <span className="hidden sm:inline">|</span>
-          <a href="#" className="hover:underline">
+          <span className="hidden sm:inline text-white">|</span>
+          <a href="#" className="hover:underline text-white">
             Agreements
           </a>
-          <span className="hidden sm:inline">|</span>
-          <a href="#" className="hover:underline">
+          <span className="hidden sm:inline text-white">|</span>
+          <a href="#" className="hover:underline text-white">
             Cookie Settings
           </a>
           <Button
@@ -200,19 +189,14 @@ export function Footer() {
         <div className="mt-8 flex items-center justify-between sm:hidden">
           <Button
             variant="outline"
-            className="rounded-md border-white bg-transparent text-white hover:bg-white hover:text-green-950"
+            className="rounded-md border-white bg-transparent text-white hover:bg-white hover:text-green-950 dark:hover:bg-gray-800"
           >
             <Globe className="mr-2 h-4 w-4" />
             Turkish
           </Button>
 
           <div className="mt-2 flex items-center">
-            <Switch
-              checked={isDarkMode}
-              onCheckedChange={setIsDarkMode}
-              className="data-[state=checked]:bg-green-500"
-              isDarkMode={isDarkMode}
-            />
+            <ThemeToggle />
           </div>
         </div>
       </div>
